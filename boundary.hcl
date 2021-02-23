@@ -56,8 +56,8 @@ job "boundary" {
 				destination = "local/boundary"
 			}
 			template {
-				source        = "local/boundary/controller.hcl.tpl"
-				destination   = "local/boundary/controller.hcl"
+				source        = "local/boundary/init.hcl.tpl"
+				destination   = "local/boundary/init.hcl"
 			}
 			driver = "docker"
 			env {
@@ -68,7 +68,7 @@ job "boundary" {
 				command = "database init"
 				args    = [
 					"-config",
-					"/local/boundary/controller.hcl"
+					"/local/boundary/init.hcl"
 				]
 			}
 		}
